@@ -67,6 +67,7 @@ function Leadform() {
     countryCode: '+1',
     phone: '',
     preferredLanguage: 'English',
+    accountExecutive: 'Ivan Duarte',
     agentType: '',
     agentFirst: '',
     agentLast: '',
@@ -299,6 +300,7 @@ function Leadform() {
       opacity: 0.7,
       cursor: 'not-allowed',
       transform: 'none',
+      background: 'black',
     },
     spinner: {
       width: '16px',
@@ -307,6 +309,7 @@ function Leadform() {
       borderTop: '2px solid white',
       borderRadius: '50%',
       animation: 'spin 1s linear infinite',
+      color:"black",
     },
     required: {
       color: '#ef4444',
@@ -345,7 +348,7 @@ function Leadform() {
           <div style={styles.formCard} className="form-card">
             <div style={styles.header}>
               <h1 style={styles.title} className="title">
-                Ivan @ The ROC Mortgage Group 
+                The ROC Mortgage Group 
               </h1>
               <div style={styles.underline}></div>
             </div>
@@ -473,6 +476,24 @@ function Leadform() {
                       {language}
                     </option>
                   ))}
+                </select>
+              </div>
+
+              {/* Account Executive */}
+              <div style={styles.formGroup}>
+                <label style={styles.label}>
+                  Account Executive
+                </label>
+                <select
+                  name="accountExecutive"
+                  value={formData.accountExecutive}
+                  onChange={handleInputChange}
+                  style={styles.select}
+                >
+                  <option value="Ivan Duarte">Ivan Duarte</option>
+                  <option value="Zunaira Asghar">Zunaira Asghar</option>
+                  <option value="Yauvan Kumar">Yauvan Kumar</option>
+                  <option value="Michael Simpson">Michael Simpson</option>
                 </select>
               </div>
 
