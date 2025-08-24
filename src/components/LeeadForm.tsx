@@ -348,7 +348,7 @@ function Leadform() {
           <div style={styles.formCard} className="form-card">
             <div style={styles.header}>
               <h1 style={styles.title} className="title">
-                The ROC Mortgage Group 
+               <img src="logo.png" alt="" />
               </h1>
               <div style={styles.underline}></div>
             </div>
