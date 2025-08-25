@@ -27,35 +27,7 @@ const countryData = [
   { code: "+971", country: "AE", name: "United Arab Emirates", flag: "🇦🇪" },
 ];
 
-const languages = [
-  "Afrikaans", "Albanian", "Amharic", "Arabic", "Armenian",
-  "Assamese", "Aymara", "Azerbaijani", "Bambara", "Basque",
-  "Belarusian", "Bengali", "Bhojpuri", "Bosnian", "Bulgarian",
-  "Burmese", "Catalan", "Cebuano", "Chichewa", "Chinese (Cantonese)",
-  "Chinese (Mandarin)", "Corsican", "Croatian", "Czech", "Danish",
-  "Dhivehi", "Dogri", "Dutch", "English", "Esperanto",
-  "Estonian", "Ewe", "Filipino", "Finnish", "French",
-  "Frisian", "Galician", "Georgian", "German", "Greek",
-  "Guarani", "Gujarati", "Haitian Creole", "Hausa", "Hawaiian",
-  "Hebrew", "Hindi", "Hmong", "Hungarian", "Icelandic",
-  "Igbo", "Ilocano", "Indonesian", "Irish", "Italian",
-  "Japanese", "Javanese", "Kannada", "Kazakh", "Khmer",
-  "Kinyarwanda", "Konkani", "Korean", "Krio", "Kurdish (Kurmanji)",
-  "Kurdish (Sorani)", "Kyrgyz", "Lao", "Latin", "Latvian",
-  "Lingala", "Lithuanian", "Luxembourgish", "Macedonian", "Maithili",
-  "Malagasy", "Malay", "Malayalam", "Maltese", "Maori",
-  "Marathi", "Meiteilon (Manipuri)", "Mizo", "Mongolian", "Nepali",
-  "Norwegian", "Odia (Oriya)", "Oromo", "Pashto", "Persian (Farsi)",
-  "Polish", "Portuguese", "Punjabi", "Quechua", "Romanian",
-  "Russian", "Samoan", "Sanskrit", "Scots Gaelic", "Sepedi",
-  "Serbian", "Sesotho", "Shona", "Sindhi", "Sinhala",
-  "Slovak", "Slovenian", "Somali", "Spanish", "Sundanese",
-  "Swahili", "Swedish", "Tajik", "Tamil", "Tatar",
-  "Telugu", "Thai", "Tigrinya", "Tsonga", "Turkish",
-  "Turkmen", "Twi", "Ukrainian", "Urdu", "Uyghur",
-  "Uzbek", "Vietnamese", "Welsh", "Xhosa", "Yiddish",
-  "Yoruba", "Zulu"
-];
+const languages = ["English","Spanish"];
 
 
 function Leadform() {
@@ -67,8 +39,7 @@ function Leadform() {
     countryCode: '+1',
     phone: '',
     preferredLanguage: 'English',
-    accountExecutive: 'Ivan Duarte',
-    agentType: '',
+    accountExecutive: '',
     agentFirst: '',
     agentLast: '',
     agentEmail: '',
@@ -504,22 +475,6 @@ function Leadform() {
                 <label style={styles.label}>
                   Real Estate Agent/Referral Partner
                 </label>
-                <div style={{ ...styles.radioGroup, marginBottom: '1rem' }} className="radio-group">
-                  {['First', 'Last'].map((type) => (
-                    <label key={type} style={styles.radioItem}>
-                      <input
-                        type="radio"
-                        name="agentType"
-                        value={type}
-                        checked={formData.agentType === type}
-                        onChange={handleInputChange}
-                        style={styles.radioInput}
-                      />
-                      <span style={styles.radioLabel}>{type}</span>
-                    </label>
-                  ))}
-                </div>
-
                 <div style={styles.row} className="form-row">
                   <input
                     type="text"
