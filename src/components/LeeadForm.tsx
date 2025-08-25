@@ -1,4 +1,4 @@
-import  { useState } from 'react';
+import { useState } from 'react';
 
 const countryData = [
   { code: "+93", country: "AF", name: "Afghanistan", flag: "🇦🇫" },
@@ -92,7 +92,7 @@ function Leadform() {
       alert('Please fill in all required fields');
       return;
     }
-    
+
     setIsSubmitting(true);
     setSubmitStatus('');
 
@@ -309,7 +309,7 @@ function Leadform() {
       borderTop: '2px solid white',
       borderRadius: '50%',
       animation: 'spin 1s linear infinite',
-      color:"black",
+      color: "black",
     },
     required: {
       color: '#ef4444',
@@ -348,7 +348,7 @@ function Leadform() {
           <div style={styles.formCard} className="form-card">
             <div style={styles.header}>
               <h1 style={styles.title} className="title">
-               <img src="logo.png" alt="" />
+                <img src="logo.png" alt="" />
               </h1>
               <div style={styles.underline}></div>
             </div>
@@ -438,7 +438,7 @@ function Leadform() {
                     name="countryCode"
                     value={formData.countryCode}
                     onChange={handleInputChange}
-                    style={{...styles.select, ...styles.countrySelect}}
+                    style={{ ...styles.select, ...styles.countrySelect }}
                   >
                     {countryData.map((country) => (
                       <option key={country.country} value={country.code}>
@@ -452,9 +452,9 @@ function Leadform() {
                     value={formData.phone}
                     onChange={handleInputChange}
                     placeholder="Enter phone number"
-                    style={{...styles.input, ...styles.phoneInput}}
-                    onFocus={(e) => Object.assign(e.target.style, {...styles.input, ...styles.phoneInput, ...styles.inputFocus})}
-                    onBlur={(e) => Object.assign(e.target.style, {...styles.input, ...styles.phoneInput})}
+                    style={{ ...styles.input, ...styles.phoneInput }}
+                    onFocus={(e) => Object.assign(e.target.style, { ...styles.input, ...styles.phoneInput, ...styles.inputFocus })}
+                    onBlur={(e) => Object.assign(e.target.style, { ...styles.input, ...styles.phoneInput })}
                     required
                   />
                 </div>
@@ -490,6 +490,7 @@ function Leadform() {
                   onChange={handleInputChange}
                   style={styles.select}
                 >
+                  <option value="">-- Select --</option> {/* empty default */}
                   <option value="Ivan Duarte">Ivan Duarte</option>
                   <option value="Zunaira Asghar">Zunaira Asghar</option>
                   <option value="Yauvan Kumar">Yauvan Kumar</option>
@@ -497,12 +498,13 @@ function Leadform() {
                 </select>
               </div>
 
+
               {/* Real Estate Agent/Referral Partner */}
               <div style={styles.formGroup}>
                 <label style={styles.label}>
                   Real Estate Agent/Referral Partner
                 </label>
-                <div style={{...styles.radioGroup, marginBottom: '1rem'}} className="radio-group">
+                <div style={{ ...styles.radioGroup, marginBottom: '1rem' }} className="radio-group">
                   {['First', 'Last'].map((type) => (
                     <label key={type} style={styles.radioItem}>
                       <input
@@ -517,7 +519,7 @@ function Leadform() {
                     </label>
                   ))}
                 </div>
-                
+
                 <div style={styles.row} className="form-row">
                   <input
                     type="text"
@@ -570,26 +572,26 @@ function Leadform() {
                   rows="4"
                   placeholder="Share any additional details about this lead..."
                   style={styles.textarea}
-                  onFocus={(e) => Object.assign(e.target.style, {...styles.textarea, ...styles.inputFocus})}
+                  onFocus={(e) => Object.assign(e.target.style, { ...styles.textarea, ...styles.inputFocus })}
                   onBlur={(e) => Object.assign(e.target.style, styles.textarea)}
                 />
               </div>
 
               {/* Submit Button */}
-              <div style={{paddingTop: '1rem'}}>
+              <div style={{ paddingTop: '1rem' }}>
                 <button
                   type="button"
                   onClick={handleSubmit}
                   disabled={isSubmitting}
                   style={{
                     ...styles.button,
-                    ...(isSubmitting 
-                      ? styles.buttonDisabled 
-                      : submitStatus === 'success' 
-                      ? styles.buttonSuccess
-                      : submitStatus === 'error'
-                      ? styles.buttonError
-                      : styles.buttonNormal
+                    ...(isSubmitting
+                      ? styles.buttonDisabled
+                      : submitStatus === 'success'
+                        ? styles.buttonSuccess
+                        : submitStatus === 'error'
+                          ? styles.buttonError
+                          : styles.buttonNormal
                     )
                   }}
                   onMouseEnter={(e) => {
@@ -600,11 +602,11 @@ function Leadform() {
                   onMouseLeave={(e) => {
                     Object.assign(e.target.style, {
                       transform: 'translateY(0px)',
-                      boxShadow: submitStatus === 'success' 
+                      boxShadow: submitStatus === 'success'
                         ? styles.buttonSuccess.boxShadow
                         : submitStatus === 'error'
-                        ? styles.buttonError.boxShadow
-                        : styles.buttonNormal.boxShadow
+                          ? styles.buttonError.boxShadow
+                          : styles.buttonNormal.boxShadow
                     });
                   }}
                 >
