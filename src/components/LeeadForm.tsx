@@ -453,13 +453,14 @@ function Leadform() {
               {/* Account Executive */}
               <div style={styles.formGroup}>
                 <label style={styles.label}>
-                  Account Executive
+                  Account Executive <span style={styles.required}>*</span>
                 </label>
                 <select
                   name="accountExecutive"
                   value={formData.accountExecutive}
                   onChange={handleInputChange}
                   style={styles.select}
+                  required
                 >
                   <option value="">-- Select --</option> {/* empty default */}
                   <option value="Ivan Duarte">Ivan Duarte</option>
